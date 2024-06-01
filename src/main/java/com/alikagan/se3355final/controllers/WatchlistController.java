@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/watchlist")
+@CrossOrigin
 public class WatchlistController {
     private final WatchlistService watchlistService;
 
