@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/public/api/movies")
+@CrossOrigin(origins = "https://wonderful-mushroom-0269ae10f.5.azurestaticapps.net")
 public class MovieController {
     private final MovieService movieService;
 
