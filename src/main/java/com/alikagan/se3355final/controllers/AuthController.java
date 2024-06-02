@@ -66,8 +66,4 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponse(jwt, user.getId(),user.getName()));
     }
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello World";
-    }
 }
