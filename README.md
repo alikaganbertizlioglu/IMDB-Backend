@@ -52,8 +52,7 @@ This project is an IMDb clone application that allows users to perform the follo
   - **Entities**: User (One) - Watchlist (One)
   - **Implementation**: `@OneToOne` annotation in the Watchlist entity referencing the user field with `mappedBy` attribute in the User entity.
     
-- **Many-to-Many Relationship**:
-- Many movies can be added to multiple watchlists, and a watchlist can contain multiple movies.
+- **Many-to-Many Relationship**: Many movies can be added to multiple watchlists, and a watchlist can contain multiple movies.
   - **Entities**: Movie (Many) - Watchlist (Many)
   - **Implementation**: `@ManyToMany` annotation in both the Movie and Watchlist entities with a join table `watchlist_movies`.
 
