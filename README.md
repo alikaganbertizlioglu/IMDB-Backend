@@ -53,7 +53,7 @@ This project is an IMDb clone application that allows users to perform the follo
   - **Implementation**: `@OneToOne` annotation in the Watchlist entity referencing the user field with `mappedBy` attribute in the User entity.
  
 
-# IMPORTANT: Popularity Ranking Update Algorithm
+# IMPORTANT! Popularity Ranking Update Algorithm
 
 ## Overview
 
