@@ -2,10 +2,12 @@
 
 The IMDb clone project is based on N-layer design and was prepared by adhering to SOLID principles. It allows users to register, log in, add movies to watchlist, and rate movies.
 
+It was prepared using the latest technology such as Java 17, Spring Boot 3, Azure SQL Database, Angular 17. It also comes with the JWT token system, BCrypt encryption algorithm, multi-language support and a responsive design.
+
 #### Frontend Source Code: https://github.com/alikaganbertizlioglu/se3355-frontend-angular
 #### Backend Live Link: https://se3355finalbackend.azurewebsites.net/swagger-ui/index.html
 #### Web App Live Link: https://wonderful-mushroom-0269ae10f.5.azurestaticapps.net/home
-![Ekran Resmi 2024-06-02 20 38 12](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/811ce102-1a77-4f3b-81a4-6a7712fb5a78)
+![Ekran Resmi 2024-06-02 20 41 03](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/7aa2f6b6-6902-4506-8447-57c7f56d837d)
 
 
 
