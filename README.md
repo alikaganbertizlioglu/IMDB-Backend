@@ -1,6 +1,13 @@
 # SE 3355 Ali Kağan Bertizlioğlu IMDb Clone Project
 
-This project is an IMDb clone that incorporates a robust architecture based on N-layered design and adheres to SOLID principles. It allows users to register, login, add movies to their watchlist, and rate movies.
+IMDb clone project is based on N-layered design and tried my best to stick SOLID principles. It provides allows users to register, login, add movies to their watchlist, and rate movies.
+
+#### Frontend Source Code: https://github.com/alikaganbertizlioglu/se3355-frontend-angular
+#### Backend Live Link: https://se3355finalbackend.azurewebsites.net/swagger-ui/index.html
+#### Web App Live Link: https://wonderful-mushroom-0269ae10f.5.azurestaticapps.net/home
+![Ekran Resmi 2024-06-02 20 38 12](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/811ce102-1a77-4f3b-81a4-6a7712fb5a78)
+
+
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
