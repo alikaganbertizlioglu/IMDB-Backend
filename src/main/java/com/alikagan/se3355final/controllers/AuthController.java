@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/public/auth")
-@CrossOrigin(origins = "https://wonderful-mushroom-0269ae10f.5.azurestaticapps.net")
 public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final UserServiceImpl userService;
