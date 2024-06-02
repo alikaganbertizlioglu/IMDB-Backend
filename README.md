@@ -4,10 +4,11 @@ This project is an IMDb clone that incorporates a robust architecture based on N
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
-2. [Backend Implementation](#backend-implementation)
-3. [Frontend Implementation](#frontend-implementation)
-4. [API Endpoints](#api-endpoints)
-5. [Conclusion](#conclusion)
+2. [Database and Relationships](#db-relationships)
+3. [Backend Implementation](#backend-implementation)
+4. [Frontend Implementation](#frontend-implementation)
+5. [API Endpoints](#api-endpoints)
+6. [Conclusion](#conclusion)
 
 ## Introduction
 This project is an IMDb clone application that allows users to perform the following operations:
@@ -17,6 +18,19 @@ This project is an IMDb clone application that allows users to perform the follo
 - Add movies to their watchlist
 - Rate movies and be effective on popularity index
 - Switch languages between Turkish and English
+  
+## Database and Relationships
+### ER Diagram 
+foto gelcek
+
+
+### Frontend (Angular)
+- `src/test`
+  - `test`
+  - `test`
+  - `test`
+
+ 
   
 ## Project Structure
 ### Backend (Spring Boot)
@@ -38,6 +52,7 @@ This project is an IMDb clone application that allows users to perform the follo
   - `app.component.ts`
   - `app-routing.module.ts`
   - `assets -> i18n -> tr.json and en.json for multilanguage support`
+
 
 
 ## Backend Implementation
