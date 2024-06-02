@@ -21,7 +21,8 @@ This project is an IMDb clone application that allows users to perform the follo
   
 ## Database and Relationships
 ### ER Diagram 
-foto gelcek
+[mermaid-diagram-2024-06-02-201552](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/df199b62-f331-497e-9363-ed4715e6f652)
+
 
 
 ### Frontend (Angular)
