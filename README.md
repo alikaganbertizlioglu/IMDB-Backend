@@ -4,7 +4,7 @@ This project is an IMDb clone that incorporates a robust architecture based on N
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
-2. [Database and Relationships](#db-relationships)
+2. [Database and Relationships](#database-and-relationships)
 3. [Backend Implementation](#backend-implementation)
 4. [Frontend Implementation](#frontend-implementation)
 5. [API Endpoints](#api-endpoints)
@@ -21,17 +21,123 @@ This project is an IMDb clone application that allows users to perform the follo
   
 ## Database and Relationships
 ### ER Diagram 
-[mermaid-diagram-2024-06-02-201552](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/df199b62-f331-497e-9363-ed4715e6f652)
+![mermaid-diagram-2024-06-02-201552](https://github.com/alikaganbertizlioglu/se3355final/assets/93092438/f545b6cf-f5de-4f7a-95d9-b4c440e20c54)
 
+### Relationships Between Entities 
 
+- **One-to-Many Relationship**: One user can have multiple ratings, and a rating belongs to only one user.
+  - **Entities**: User (One) - Rating (Many)
+  - **Implementation**: `@OneToMany` annotation in the User entity referencing the ratings field.
 
-### Frontend (Angular)
-- `src/test`
-  - `test`
-  - `test`
-  - `test`
+- **Many-to-One Relationship**: Many ratings can belong to one movie, and one movie can have multiple ratings.
+  - **Entities**: Rating (Many) - Movie (One)
+  - **Implementation**: `@ManyToOne` annotation in the Rating entity referencing the movie field.
 
+- **Many-to-Many Relationship**: Many movies can have multiple actors, and an actor can act in multiple movies.
+  - **Entities**: Movie (Many) - Actor (Many)
+  - **Implementation**: `@ManyToMany` annotation in both the Movie and Actor entities with a join table `movie_actor`.
+
+- **One-to-One Relationship**: Each user has one watchlist, and a watchlist belongs to only one user.
+  - **Entities**: User (One) - Watchlist (One)
+  - **Implementation**: `@OneToOne` annotation in the Watchlist entity referencing the user field with `mappedBy` attribute in the User entity.
  
+
+# IMPORTANT: Popularity Ranking Update Algorithm
+
+## Overview
+
+Implemented an algorithm that updates the popularity ranking in ascending order based on a combination of the average rating and the number of viewers. Utilized stored procedures, functions, and SQL triggers for this functionality.
+
+## Stored Procedure (`update_popularity_rankings`)
+
+The stored procedure calculates the popularity score for each movie, orders them by the score, and updates the popularity ranking.
+
+```sql
+CREATE PROCEDURE update_popularity_rankings
+AS
+BEGIN
+    -- Create a temporary table to hold the movie IDs and their calculated popularity scores
+    CREATE TABLE #temp_popularity_ranking (
+        id BIGINT,
+        popularity_score FLOAT
+    );
+
+    -- Insert the movie IDs and their calculated popularity scores into the temporary table
+    INSERT INTO #temp_popularity_ranking (id, popularity_score)
+    SELECT
+        m.id,
+        0.7 * ISNULL(AVG(r.rating), 0) + 0.3 * m.number_of_viewer AS popularity_score
+    FROM
+        movies m
+        LEFT JOIN ratings r ON m.id = r.movie_id
+    GROUP BY
+        m.id, m.number_of_viewer;
+
+    -- Update the movies table with the new popularity ranking
+    UPDATE m
+    SET m.popularity_ranking = pr.new_rank
+    FROM
+        movies m
+        JOIN (
+            SELECT
+                id,
+                ROW_NUMBER() OVER (ORDER BY popularity_score DESC) AS new_rank
+            FROM
+                #temp_popularity_ranking
+        ) pr ON m.id = pr.id;
+
+    -- Drop the temporary table
+    DROP TABLE #temp_popularity_ranking;
+END
+```
+### Triggers  (`after_rating_insert`) and  (`after_movie_update`)
+
+Triggers are created for the ratings and movies tables to call the stored procedure whenever a relevant update occurs.
+```sql
+
+CREATE TRIGGER after_rating_insert
+ON ratings
+AFTER INSERT
+AS
+BEGIN
+    EXEC update_popularity_rankings;
+END
+GO
+
+CREATE TRIGGER after_rating_update
+ON ratings
+AFTER UPDATE
+AS
+BEGIN
+    EXEC update_popularity_rankings;
+END
+GO
+
+This trigger will call the stored procedure whenever the number of viewers changes.
+sql
+Kodu kopyala
+CREATE TRIGGER after_movie_update
+ON movies
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(number_of_viewer)
+    BEGIN
+        EXEC update_popularity_rankings;
+    END
+END
+GO
+```
+
+## Explanation
+
+1. **Stored Procedure**:
+    - **update_popularity_rankings**: This procedure calculates a popularity score for each movie using a weighted combination of the average rating and the number of viewers. It then assigns a rank based on the descending order of these scores using the `ROW_NUMBER()` function. The new ranks are updated in the movies table.
+
+2. **Triggers**:
+    - **after_rating_insert** and **after_rating_update**: These triggers execute the stored procedure whenever a new rating is inserted or an existing rating is updated.
+    - **after_movie_update**: This trigger executes the stored procedure whenever the `number_of_viewer` field is updated in the movies table.
+
   
 ## Project Structure
 ### Backend (Spring Boot)
