@@ -3,14 +3,13 @@
 This project is an IMDb clone that allows users to register, login, add movies to their watchlist, and rate movies. The backend is implemented using Spring Boot and the frontend is developed with Angular.
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Project Structure](#project-structure)
-3. [Backend Implementation](#backend-implementation)
-4. [Frontend Implementation](#frontend-implementation)
-5. [Features](#features)
-6. [Usage](#usage)
-7. [API Endpoints](#api-endpoints)
-8. [Conclusion](#conclusion)
+1. [Project Structure](#project-structure)
+2. [Backend Implementation](#backend-implementation)
+3. [Frontend Implementation](#frontend-implementation)
+4. [Features](#features)
+5. [Usage](#usage)
+6. [API Endpoints](#api-endpoints)
+7. [Conclusion](#conclusion)
 
 ## Introduction
 This project is an IMDb clone application that allows users to perform the following operations:
@@ -18,8 +17,9 @@ This project is an IMDb clone application that allows users to perform the follo
 - Login
 - Display movies, trailers, and detailed info.
 - Add movies to their watchlist
-- Rate movies
-- Be effective on popularity index of movies
+- Rate movies and be effective on popularity index
+- Switch languages between Turkish and English
+  
 ## Project Structure
 
 ### Backend (Spring Boot)
@@ -77,12 +77,12 @@ This project is an IMDb clone application that allows users to perform the follo
 ## Frontend Implementation
 
 ### Components
-- **LoginComponent**: 
-- **RegisterComponent**: 
-- **HomeComponent**:
-- **MovieComponent**: 
-- **FooterComponent**:
-- **HeaderComponent**: 
+- **LoginComponent**
+- **RegisterComponent**
+- **HomeComponent**
+- **MovieComponent**
+- **FooterComponent**
+- **HeaderComponent**
 ### Services
 - **AuthService**: Handles authentication and user services.
 - **MovieService**: Handles movie-related operations.
@@ -114,4 +114,4 @@ This project is an IMDb clone application that allows users to perform the follo
 
 
 ## Conclusion
-This IMDb clone provides a robust platform for users to explore movies, manage their watchlist, and rate movies. The project demonstrates a full-stack application using Spring Boot for the backend and Angular for the frontend, showcasing essential features such as user authentication, CRUD operations, and user interaction with movies.
+This IMDb clone provides a robust platform for users to explore movies, manage their watchlist, and rate movies. The project demonstrates a full-stack application using Spring Boot for the backend and Angular for the frontend, showcasing essential features such as user authentication, CRUD operations, and user interactions.
