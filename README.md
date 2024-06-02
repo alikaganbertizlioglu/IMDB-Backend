@@ -1,15 +1,13 @@
 # SE 3355 Ali Kağan Bertizlioğlu IMDb Clone Project
 
-This project is an IMDb clone that allows users to register, login, add movies to their watchlist, and rate movies. The backend is implemented using Spring Boot and the frontend is developed with Angular.
+This project is an IMDb clone that incorporates a robust architecture based on N-layered design and adheres to SOLID principles. It allows users to register, login, add movies to their watchlist, and rate movies.
 
 ## Table of Contents
 1. [Project Structure](#project-structure)
 2. [Backend Implementation](#backend-implementation)
 3. [Frontend Implementation](#frontend-implementation)
-4. [Features](#features)
-5. [Usage](#usage)
-6. [API Endpoints](#api-endpoints)
-7. [Conclusion](#conclusion)
+4. [API Endpoints](#api-endpoints)
+5. [Conclusion](#conclusion)
 
 ## Introduction
 This project is an IMDb clone application that allows users to perform the following operations:
@@ -21,7 +19,6 @@ This project is an IMDb clone application that allows users to perform the follo
 - Switch languages between Turkish and English
   
 ## Project Structure
-
 ### Backend (Spring Boot)
 - `src/main/java/com/imdb/clone`
   - `controller`
@@ -44,35 +41,18 @@ This project is an IMDb clone application that allows users to perform the follo
 
 
 ## Backend Implementation
-
 ### Controllers
-- **AuthController**
-- **MovieController**
-- **ActorController**
-- **WatchlistController**
-- **RatingController**
+- AuthController, MovieController, ActorController, WatchlistController, RatingController
 
 ### Services
-- **UserService**: Business logic for user operations.
-- **MovieService**: Business logic for movie operations.
-- **WatchlistService**: Business logic for watchlist operations.
-- **RatingService**: Business logic for rating operations.
-- **ActorService**: Business logic for actor operations.
-
+- UserService, MovieService, WatchlistService, RatingService, ActorService
 
 ### Repositories
-- **UserRepository**: Interface for user data access.
-- **MovieRepository**: Interface for movie data access.
-- **WatchlistRepository**: Interface for watchlist data access.
-- **RatingRepository**: Interface for rating data access.
-- **ActorRepository**: Interface for actor data access.
+- UserRepository, MovieRepository, WatchlistRepository, RatingRepository, ActorRepository
 
 ### Entities
-- **User**: Represents user entity.
-- **Movie**: Represents movie entity.
-- **Watchlist**: Represents watchlist entity.
-- **Rating**: Represents rating entity.
-- **Actor**: Represents Actor entity
+- User, Movie, Watchlist, Rating, Actor
+
 
 ## Frontend Implementation
 
