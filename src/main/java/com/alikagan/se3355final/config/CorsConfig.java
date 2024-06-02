@@ -10,7 +10,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**") // Adjust this mapping to match your API endpoints
                 .allowedOrigins("http://localhost:4200","https://wonderful-mushroom-0269ae10f.5.azurestaticapps.net",
                         "http://wonderful-mushroom-0269ae10f.5.azurestaticapps.net")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedMethods("GET", "POST", "PUT", "DELETE","OPTIONS")
                 .allowedHeaders("*");
     }
 
