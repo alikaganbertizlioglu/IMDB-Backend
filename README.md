@@ -1,6 +1,8 @@
 # SE 3355 Ali Kağan Bertizlioğlu IMDb Clone Project
 
-The IMDb clone project is based on N-layer design and was prepared by adhering to SOLID principles. It allows users to register, log in, add movies to watchlist, and rate movies.
+Presentation video : https://www.youtube.com/watch?v=Ff7O7cpDdCM
+
+The IMDb clone project is based on N-layered Architecture and was prepared by adhering to SOLID principles. It allows users to register, log in, add movies to watchlist, and rate movies.
 
 It was prepared using the latest technology such as Java 17, Spring Boot 3, Azure SQL Database, Angular 17. It also comes with the JWT token system, BCrypt encryption algorithm, multi-language support and a responsive design.
 Frontend, database and backend deployed to Microsoft Azure.
