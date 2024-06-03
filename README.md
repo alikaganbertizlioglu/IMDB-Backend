@@ -2,8 +2,6 @@
 
 Presentation video : https://www.youtube.com/watch?v=Ff7O7cpDdCM
 
-[![video](https://markdown-videos-api.jorgenkh.no/youtube/{Ff7O7cpDdCM)](https://youtu.be/{Ff7O7cpDdCM})
-
 
 The IMDb clone project is based on N-layered Architecture and was prepared by adhering to SOLID principles. It allows users to register, log in, add movies to watchlist, and rate movies.
 
